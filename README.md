@@ -2,9 +2,9 @@
 
 A browser 3D puzzle game built with Three.js for the Week 05/06 group assignment.
 
-You are a time researcher trapped in a sealed laboratory. You cannot reach every switch by
-yourself, so you record your own movement, rewind time, and let your echo hold the controls you
-cannot hold at the same time.
+You are a time researcher trapped in a sealed laboratory. Your goal is to collect all three time
+cores and escape through the exit portal. You cannot reach every switch by yourself, so record your
+movement, rewind time, and let your echo hold controls that you cannot hold at the same time.
 
 ## Play online
 
@@ -74,21 +74,31 @@ Team members contribute through their branches and forks; they use the shared pl
 | --- | --- |
 | `W A S D` | Move in the XZ plane (W = +Z, A/D = left/right) |
 | `Space` | Jump |
-| `R` | Rewind: finish the current recording, return to spawn, replay your route as a violet echo |
-| `E` | Interact — collect a nearby time core, or use the exit |
-| `Esc` | Leave Demo mode |
-| Mouse drag | Orbit the camera (click the viewport to capture the pointer) |
+| `R` | Rewind: finish the current recording, return to spawn, and replay your route as a violet echo |
+| `E` | Interact — collect a nearby time core, or activate the exit when all three cores are collected |
+| `RESTART` button | Reset the player, echo, puzzle state, and collected cores |
+| `Esc` | Release the mouse pointer lock; in Demo mode, return to the title screen |
+| Mouse | Click the viewport to capture the pointer, then move the mouse to orbit the camera |
+
+Movement uses the world XZ axes rather than the camera direction: `W` moves toward +Z and `S`
+toward -Z; `A` and `D` move left and right on the X axis. Click the viewport again after releasing
+pointer lock if you want to recapture the camera.
 
 ## The puzzle chain
 
-1. **Sync gate** — two pressure plates. You can only stand on one, so record a route onto the
-   first plate, press `R`, and take the second plate yourself. The gate opens while both are held.
-2. **Time core 1** — behind the gate; press `E` next to it.
-3. **Laser hall** — jump the low orange beam, and leave an echo on the cyan switch to shut down
-   the vertical gate before crossing. A red beam sweeps the corridor.
-4. **Time core 2** — past the gate.
-5. **Core chamber** — you and your echo on the two violet plates drop the energy field.
-6. **Time core 3** and the exit portal.
+1. **Sync gate** — two pressure plates are placed side by side. Record a route onto one plate,
+   press `R` to create the violet echo, then move onto the other plate yourself. The blue door
+   opens once both plates are occupied and stays open.
+2. **Time core 1** — pass through the opened door and press `E` while standing near the first core.
+3. **Laser hall** — jump over the low orange beam. Record an echo on the cyan switch so it holds
+   the switch while you cross; the vertical gate is disabled only while that switch is active. A
+   moving red beam also sweeps across the hall, so time the crossing carefully.
+4. **Time core 2** — after the gate, move near the second core and press `E` to collect it. A beam
+   hit sends the player back to the laser-hall respawn point.
+5. **Core chamber** — place the player and echo on the two violet plates at the same time. This
+   drops the energy field.
+6. **Time core 3 and exit** — press `E` near the final core, then reach the exit portal and press
+   `E` again to finish. The exit is not usable before all three cores are collected.
 
 ## Title screen
 
